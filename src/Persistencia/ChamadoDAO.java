@@ -22,7 +22,7 @@ import java.util.HashMap;
  */
 public class ChamadoDAO {
 
-    private HashMap<Integer, Chamado> cashChamado;
+    private HashMap<Integer, Chamado> cashChamado; 
     private HashMap<Integer, RegistroChamado> cashRegistroChamado;
     private static final String nomeArquivo = "chamados.dat";
     private static final String nomeArquivoRegistro = "registroChamados.dat";
