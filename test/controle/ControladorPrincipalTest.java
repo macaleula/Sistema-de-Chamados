@@ -18,4 +18,13 @@ public class ControladorPrincipalTest {
     public ControladorPrincipalTest() {
     }
     
+    @Test
+    public void inicializationTest() {
+        ControladorPrincipal crtP = new ControladorPrincipal();
+        
+        assertTrue(crtP.getCtrChamados() != null);
+        assertTrue(crtP.getCtrClientes()!= null);
+        assertTrue(crtP.getCtrEmpresa()!= null);
+        assertTrue(crtP.getCtrTecnicos()!= null);
+    }
 }

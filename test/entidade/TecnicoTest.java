@@ -17,4 +17,20 @@ public class TecnicoTest {
     public TecnicoTest() {
     }
     
+    @Test
+    public void construtorTest() {
+        Tecnico tecnico = new Tecnico("Jorge",41148822);
+        
+        assertEquals("Jorge",tecnico.getNome());
+        assertEquals(41148822,tecnico.getTelefone());
+    }
+    
+    @Test
+    public void toStringTest() {
+        Tecnico tecnico = new Tecnico("Jorge",41148822);
+        
+        String expected = "Jorge";
+        
+        assertEquals(expected ,tecnico.toString());
+    }
 }

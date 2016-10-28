@@ -17,4 +17,21 @@ public class EmpresaTest {
     public EmpresaTest() {
     }
     
+    @Test
+    public void construtorTest() {
+        Empresa empresa = new Empresa(1,"Jambo Lanches");
+        
+        assertEquals(1,empresa.getNumeroContrato());
+        assertEquals("Jambo Lanches",empresa.getNomeEmpresa());
+
+    }
+    
+    @Test
+    public void toStringTest() {
+        Empresa empresa = new Empresa(1,"Jambo Lanches");
+        
+        String expected = "1 - Jambo Lanches";
+        
+        assertEquals(expected ,empresa.toString());
+    }
 }

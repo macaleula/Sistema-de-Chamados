@@ -17,4 +17,11 @@ public class PessoaTest {
     public PessoaTest() {
     }
     
+    @Test
+    public void construtorTest() {
+        Pessoa pessoa = new Pessoa("Anderson",41148822);
+        
+        assertEquals("Anderson",pessoa.getNome());
+        assertEquals(41148822,pessoa.getTelefone());
+    }
 }

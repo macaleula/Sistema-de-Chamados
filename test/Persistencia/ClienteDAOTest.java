@@ -88,6 +88,11 @@ public class ClienteDAOTest {
     @Test
     public void putTest() {
         ClienteDAO clienteDAO = new ClienteDAO();
+        
+        ClienteEmpresa clienteEmp = new ClienteEmpresa(2,new Empresa(111,"Telefone"),1234,"Sergio",12344321);
+        clienteDAO.put(clienteEmp);
+
+        
         HashMap<Long, ClienteEmpresa> cashClientes = new HashMap();
         try {
             FileInputStream fis = new FileInputStream(nomeArquivo);
@@ -108,9 +113,7 @@ public class ClienteDAOTest {
             System.err.println("Erro ao processar registros dos arquivos " + nomeArquivo);
             System.err.println(ex.getMessage());
         }
-        ClienteEmpresa clienteEmp = new ClienteEmpresa(2,new Empresa(111,"Telefone"),1234,"Sergio",12344321);
-        clienteDAO.put(clienteEmp);
-        
+
         Iterator<ClienteEmpresa> resultIterator = clienteDAO.voltaCashCliente()
                 .values().iterator();
         Iterator<ClienteEmpresa> expectedIterator = cashClientes.values().iterator();
