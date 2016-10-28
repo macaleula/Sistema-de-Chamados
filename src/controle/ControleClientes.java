@@ -20,7 +20,7 @@ public class ControleClientes {
     private ClienteDAO clienteDAO;
 
     public ControleClientes() {
-        this.clienteDAO = new ClienteDAO();
+        this.clienteDAO = new ClienteDAO();        
          
     }
 
