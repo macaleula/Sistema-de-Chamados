@@ -11,6 +11,7 @@ import apresentacao.TelaRegistAcomp;
 import apresentacao.TelaRelatorioChamado;
 import entidade.Chamado;
 import entidade.ClienteEmpresa;
+import entidade.Empresa;
 import entidade.RegistroChamado;
 import entidade.Tecnico;
 import java.util.Collection;
@@ -30,6 +31,18 @@ public class ControleChamados {
 
         this.chamadoDAO = new ChamadoDAO();
 
+    }
+    
+    public static void main(String args[]) {
+        Tecnico tecnico = new Tecnico("Jamilson",11223344);
+        Empresa empresa = new Empresa(1,"Jambo Lanches");
+        ClienteEmpresa cliente = new ClienteEmpresa(3,empresa,1333,"Lucas",12344321);
+        
+        
+        
+        ControleChamados controle = new ControleChamados();
+        Chamado chamado = new Chamado(1,"Teste chamado rede","Teste Junit rede",1,tecnico,cliente,"Windows","7.01","LAN","127.0.0.1");
+        System.out.println(controle.retornaDetalhesChamado(chamado));
     }
 
     public Chamado alterarChamado(Chamado chamado, String status, String causa, String solucao) {
@@ -140,30 +153,30 @@ public class ControleChamados {
             			break;
             			
             		case 4 :
-            			prioridade = "Crítica";
+            			prioridade = "Crï¿½tica";
             			break;
             	}
                 relatorio += "\n" + "--------" + "\nData de abertura do chamado: " +
                     	ref.getData() + 
-                    	"\nHorário de abertura do chamado: " + ref.getHora() + 
-                    	"\nTítulo do chamado: " + ref.getTitulo() + 
-                    	"\nCódigo do chamado: " + ref.getCodigo() +
-                    	"\nDescrição do chamado: " + ref.getDescricao() + 
+                    	"\nHorï¿½rio de abertura do chamado: " + ref.getHora() + 
+                    	"\nTï¿½tulo do chamado: " + ref.getTitulo() + 
+                    	"\nCï¿½digo do chamado: " + ref.getCodigo() +
+                    	"\nDescriï¿½ï¿½o do chamado: " + ref.getDescricao() + 
                     	"\nPrioridade do chamado: " + prioridade + 
                     	"\nStatus do chamado: " + ref.getStatus() + 
                     	"\nTipo de problema do chamado: " + ref.getTipoProblema() + 
-                    	"\nTécnico responsável pelo chamado: " + ref.getTecnico() + 
+                    	"\nTï¿½cnico responsï¿½vel pelo chamado: " + ref.getTecnico() + 
                     	"\nCliente requisitor do chamado: " + ref.getCliente() + "\n";
                 
                 for(RegistroChamado rc : registros){
                 	if(rc.getChamado().equals(ref)){
-                		relatorio += "\nRelatório de registros de acompanhamento:" + 
+                		relatorio += "\nRelatï¿½rio de registros de acompanhamento:" + 
                 	"\nData: " + rc.getData() + 
                 	"\nHora: " + rc.getHora() + 
                 	"\nAssunto: " + rc.getAssunto() +
-                	"\nTécnico responsável: " + rc.getTecnico().getNome() +
+                	"\nTï¿½cnico responsï¿½vel: " + rc.getTecnico().getNome() +
                 	"\nCausa do problema: " + ref.getCausaProblema() + 
-                	"\nSolução do problema: " + ref.getSolucaoProblema();
+                	"\nSoluï¿½ï¿½o do problema: " + ref.getSolucaoProblema();
                 	}
                 }
             }
