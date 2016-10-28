@@ -5,6 +5,7 @@
  */
 package controle;
 
+import entidade.Tecnico;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,4 +18,11 @@ public class ControleTecnicosTest {
     public ControleTecnicosTest() {
     }
     
+    public void inserirTest() {
+        ControleTecnicos controle = new ControleTecnicos();
+        Tecnico t = controle.inserir(33240989, "Geraldo");
+        
+        assertEquals("Geraldo",t.getNome());
+        assertEquals(33240989,t.getTelefone());
+    }
 }
